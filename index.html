@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vishwa</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background: #f4ede2;
+            color: #3b3028;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           CONTENEDOR PRINCIPAL
+        ========================= */
+
+        .vishwa {
+            width: 90%;
+            max-width: 650px;
+
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+
+        /* =========================
+           NOMBRE VISHWA
+        ========================= */
+
+        .logo {
+            font-size: 38px;
+            letter-spacing: 5px;
+
+            margin-bottom: 25px;
+
+            opacity: 0;
+
+            animation: aparecer 2s ease forwards;
+        }
+
+
+        /* =========================
+           ILUSTRACIÓN
+        ========================= */
+
+        .ilustracion {
+            width: 230px;
+            max-width: 65vw;
+
+            margin-bottom: 35px;
+
+            opacity: 0;
+
+            animation: aparecer 2s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+
+        .ilustracion img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        /* =========================
+           SECUENCIA DE ENTRADA
+        ========================= */
+
+        .entrada {
+            min-height: 150px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .entrada span {
+            display: block;
+
+            font-size: 21px;
+            letter-spacing: 2px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 1.2s ease forwards,
+                desaparecer 1s ease forwards;
+        }
+
+
+        .entrada span:nth-child(1) {
+            animation-delay: 1s, 2.8s;
+        }
+
+        .entrada span:nth-child(2) {
+            animation-delay: 2s, 3.8s;
+        }
+
+        .entrada span:nth-child(3) {
+            animation-delay: 3s, 4.8s;
+        }
+
+        .entrada span:nth-child(4) {
+            animation-delay: 4s, 5.8s;
+        }
+
+
+        /* =========================
+           REFLEXIÓN
+        ========================= */
+
+        .reflexion-container {
+            max-width: 570px;
+
+            opacity: 0;
+
+            animation: reflexionAparecer 2s ease forwards;
+            animation-delay: 7.5s;
+        }
+
+
+        .reflexion {
+            font-size: 24px;
+
+            line-height: 1.7;
+
+            letter-spacing: 0.3px;
+
+            margin: 0 0 40px 0;
+        }
+
+
+        /* =========================
+           BOTÓN
+        ========================= */
+
+        .boton {
+            border: none;
+
+            background: transparent;
+
+            color: #6d5a4c;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 15px;
+
+            letter-spacing: 1.5px;
+
+            cursor: pointer;
+
+            padding: 10px 18px;
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .boton:hover {
+            opacity: 0.6;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           ANIMACIONES
+        ========================= */
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes desaparecer {
+
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+
+        }
+
+
+        @keyframes reflexionAparecer {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           CAMBIO DE REFLEXIÓN
+        ========================= */
+
+        .salir {
+            opacity: 0 !important;
+
+            transform: translateY(-10px);
+
+            transition:
+                opacity 0.6s ease,
+                transform 0.6s ease;
+        }
+
+
+        .entrar {
+            opacity: 1 !important;
+
+            transform: translateY(0);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+
+        /* =========================
+           MÓVIL
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .logo {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            .ilustracion {
+                width: 190px;
+                margin-bottom: 25px;
+            }
+
+            .entrada span {
+                font-size: 19px;
+            }
+
+            .reflexion {
+                font-size: 21px;
+                line-height: 1.65;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="vishwa">
+
+
+        <!-- NOMBRE -->
+
+        <div class="logo">
+            Vishwa
+        </div>
+
+
+        <!-- ILUSTRACIÓN -->
+
+        <div class="ilustracion">
+
+            <img
+                src="vishwa-ilustracion.png"
+                alt="Ilustración Vishwa"
+            >
+
+        </div>
+
+
+        <!-- SECUENCIA DE CONCENTRACIÓN -->
+
+        <div class="entrada">
+
+            <span>Respira.</span>
+
+            <span>Exhala.</span>
+
+            <span>Lee.</span>
+
+            <span>Escribe.</span>
+
+        </div>
+
+
+        <!-- REFLEXIÓN -->
+
+        <section
+            class="reflexion-container"
+            id="reflexionContainer"
+        >
+
+            <p
+                class="reflexion"
+                id="reflexion"
+            ></p>
+
+
+            <button
+                class="boton"
+                id="cambiarFrase"
+            >
+                Cambiar frase
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+        /* =========================
+           REFLEXIONES VISHWA
+        ========================= */
+
+        const reflexiones = [
+
+            "Reconocer cuánto de quien eres nació de lo que alguna vez necesitaste ser.",
+
+            "Preguntarse quién permanecería en ti si dejaras de intentar cumplir las expectativas de los demás.",
+
+            "Aceptar las partes de ti que todavía estás aprendiendo a comprender.",
+
+            "Comprender que algunas respuestas llegan cuando la pregunta ya ha dejado de doler.",
+
+            "Recordar sin intentar regresar al lugar donde alguna vez fuiste feliz.",
+
+            "Permitir que el tiempo transforme aquello que todavía no estás preparado para soltar.",
+
+            "Amar sin confundir la entrega con la renuncia a ti mismo.",
+
+            "Aceptar que algunas personas pueden ser profundamente importantes sin permanecer para siempre.",
+
+            "Aprender a despedirte de alguien sin convertir la ausencia en una negación de lo vivido.",
+
+            "Extrañar sin convertir el recuerdo en un lugar donde dejar de vivir.",
+
+            "Aceptar que algunas ausencias no necesitan dejar de doler para encontrar un lugar dentro de ti.",
+
+            "Reconocer aquello que alguien dejó en ti incluso después de haber dejado tu vida.",
+
+            "Preguntarse cuánto de aquello que temes realmente pertenece al futuro y cuánto pertenece a tu imaginación.",
+
+            "Permitir que el miedo exista sin entregarle la decisión sobre tu camino.",
+
+            "Reconocer que también puede existir valentía en aceptar aquello que todavía te asusta.",
+
+            "Preguntarte qué elegirías si nadie pudiera admirar ni juzgar aquello que haces con tu vida.",
+
+            "Reconocer cuándo perseguir un sueño ha dejado de significar perseguirte a ti mismo.",
+
+            "Permitir que tu propósito cambie cuando también has cambiado tú.",
+
+            "Escuchar aquello que aparece dentro de ti cuando ya no existe nadie a quien responder.",
+
+            "Aprender a estar contigo sin convertir la soledad en una ausencia de compañía.",
+
+            "Reconocer cuánto de la necesidad de encontrar a alguien nace del miedo a encontrarte contigo mismo.",
+
+            "Aceptar que cambiar también puede significar despedirte de una versión de ti que alguna vez necesitaste.",
+
+            "Soltar la necesidad de permanecer igual para demostrar que sigues siendo tú.",
+
+            "Permitir que aquello que termina también tenga derecho a convertirse en el comienzo de algo distinto.",
+
+            "Perdonar sin obligarte a olvidar aquello que necesitabas aprender.",
+
+            "Reconocer cuánto tiempo has dedicado a castigarte por algo que ya no puedes cambiar.",
+
+            "Aceptar que perdonar también puede significar dejar de esperar que el pasado sea diferente.",
+
+            "Observar cuánto de este momento desaparece mientras intentas llegar al siguiente.",
+
+            "Permitir que un instante sea suficiente sin exigirle convertirse en algo más.",
+
+            "Estar aquí sin convertir este momento en una espera de aquello que todavía no sucede."
+
+        ];
+
+
+        /* =========================
+           ELEMENTOS
+        ========================= */
+
+        const reflexion =
+            document.getElementById("reflexion");
+
+        const boton =
+            document.getElementById("cambiarFrase");
+
+        const contenedor =
+            document.getElementById("reflexionContainer");
+
+
+        let ultimaReflexion = -1;
+
+
+        /* =========================
+           ELEGIR REFLEXIÓN
+        ========================= */
+
+        function elegirReflexion() {
+
+            let nuevaReflexion;
+
+            do {
+
+                nuevaReflexion =
+                    Math.floor(
+                        Math.random() *
+                        reflexiones.length
+                    );
+
+            } while (
+                nuevaReflexion === ultimaReflexion
+            );
+
+
+            ultimaReflexion = nuevaReflexion;
+
+
+            return reflexiones[nuevaReflexion];
+
+        }
+
+
+        /* =========================
+           MOSTRAR PRIMERA REFLEXIÓN
+        ========================= */
+
+        function mostrarPrimeraReflexion() {
+
+            reflexion.textContent =
+                elegirReflexion();
+
+        }
+
+
+        /*
+           Esperamos a que termine
+           Respira → Exhala → Lee → Escribe
+        */
+
+        setTimeout(
+            mostrarPrimeraReflexion,
+            7600
+        );
+
+
+        /* =========================
+           CAMBIAR REFLEXIÓN
+        ========================= */
+
+        boton.addEventListener(
+            "click",
+            function () {
+
+                contenedor.classList.add("salir");
+
+
+                setTimeout(
+                    function () {
+
+                        reflexion.textContent =
+                            elegirReflexion();
+
+
+                        contenedor.classList.remove(
+                            "salir"
+                        );
+
+                        contenedor.classList.add(
+                            "entrar"
+                        );
+
+
+                        setTimeout(
+                            function () {
+
+                                contenedor.classList.remove(
+                                    "entrar"
+                                );
+
+                            },
+                            800
+                        );
+
+
+                    },
+                    600
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
