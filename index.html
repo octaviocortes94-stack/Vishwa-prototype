@@ -15,8 +15,10 @@
 body {
     margin: 0;
     min-height: 100vh;
+
     background: #f7f4ef;
     color: #3d3935;
+
     font-family: Georgia, "Times New Roman", serif;
 
     display: flex;
@@ -26,9 +28,13 @@ body {
     padding: 30px 20px;
 }
 
+
+/* CONTENEDOR PRINCIPAL */
+
 .contenedor {
     width: 100%;
-    max-width: 620px;
+    max-width: 600px;
+
     text-align: center;
 
     display: flex;
@@ -36,24 +42,27 @@ body {
     align-items: center;
 }
 
-/* LOGO */
+
+/* VISHWA */
 
 .logo {
     font-size: 42px;
     letter-spacing: 7px;
-    margin-bottom: 40px;
+
+    margin-bottom: 35px;
 }
 
-/* IDIOMAS */
+
+/* SELECCIÓN DE IDIOMA */
 
 .idiomas {
     display: flex;
     gap: 15px;
-    justify-content: center;
 }
 
 .boton-idioma {
     border: 1px solid #b8b0a6;
+
     background: transparent;
 
     padding: 12px 25px;
@@ -63,13 +72,14 @@ body {
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .boton-idioma:hover {
     background: #3d3935;
     color: white;
 }
+
 
 /* EXPERIENCIA */
 
@@ -78,9 +88,26 @@ body {
     width: 100%;
 }
 
-/* INSTRUCCIONES */
 
-.instrucciones {
+/* IMAGEN */
+
+.ilustracion {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.ilustracion img {
+    width: 70%;
+    max-width: 270px;
+    height: auto;
+}
+
+
+/* ZONA CENTRAL */
+
+.zona-mensaje {
+
     min-height: 190px;
 
     display: flex;
@@ -89,120 +116,170 @@ body {
     justify-content: center;
     align-items: center;
 
+}
+
+
+/* RITUAL */
+
+.instrucciones {
+
+    display: flex;
+    flex-direction: column;
+
     gap: 8px;
 
     font-size: 22px;
+
     letter-spacing: 2px;
 
     transition: opacity 1s ease;
+
 }
 
+
+/* PALABRAS */
+
 .palabra {
+
     opacity: 0;
+
     transform: translateY(8px);
 }
 
 .palabra.visible {
-    animation: aparecer 0.8s ease forwards;
+
+    animation:
+        aparecer 0.8s ease forwards;
+
 }
 
-/* ILUSTRACIÓN */
-
-.ilustracion {
-    width: 100%;
-    margin: 15px 0 25px;
-}
-
-.ilustracion img {
-    max-width: 260px;
-    width: 70%;
-    height: auto;
-}
 
 /* REFLEXIÓN */
 
 .reflexion {
-    display: none;
 
-    margin: 20px auto 35px;
+    display: none;
 
     max-width: 550px;
 
     font-size: 27px;
+
     line-height: 1.55;
+
+    margin: 0 auto;
 
     opacity: 0;
 }
 
 .reflexion.visible {
+
     display: block;
-    animation: aparecer 1.5s ease forwards;
+
+    animation:
+        aparecer 1.5s ease forwards;
+
 }
+
 
 /* BOTÓN */
 
 .boton-nuevo {
+
     display: none;
 
+    margin-top: 30px;
+
     border: 1px solid #3d3935;
+
     background: transparent;
 
     padding: 13px 28px;
 
     font-family: inherit;
+
     font-size: 16px;
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .boton-nuevo:hover {
+
     background: #3d3935;
+
     color: white;
+
 }
+
 
 /* ANIMACIÓN */
 
 @keyframes aparecer {
 
     from {
+
         opacity: 0;
-        transform: translateY(8px);
+
+        transform:
+            translateY(8px);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
 }
+
 
 /* CELULAR */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 25px 18px;
+
+        padding:
+            25px 18px;
+
     }
 
     .logo {
+
         font-size: 34px;
-        letter-spacing: 6px;
-    }
 
-    .instrucciones {
-        font-size: 20px;
-        min-height: 180px;
-    }
+        letter-spacing:
+            6px;
 
-    .reflexion {
-        font-size: 23px;
-        line-height: 1.5;
     }
 
     .ilustracion img {
-        max-width: 220px;
+
+        max-width:
+            220px;
+
+    }
+
+    .instrucciones {
+
+        font-size:
+            20px;
+
+    }
+
+    .reflexion {
+
+        font-size:
+            23px;
+
+        line-height:
+            1.5;
+
     }
 
 }
@@ -213,14 +290,18 @@ body {
 
 <body>
 
+
 <div class="contenedor">
+
+
+    <!-- LOGO -->
 
     <div class="logo">
         Vishwa
     </div>
 
 
-    <!-- SELECCIÓN DE IDIOMA -->
+    <!-- IDIOMAS -->
 
     <div
         class="idiomas"
@@ -231,14 +312,15 @@ body {
             class="boton-idioma"
             onclick="seleccionarIdioma('es')"
         >
-            Español
+            español
         </button>
+
 
         <button
             class="boton-idioma"
             onclick="seleccionarIdioma('en')"
         >
-            English
+            inglés
         </button>
 
     </div>
@@ -251,15 +333,8 @@ body {
         id="experiencia"
     >
 
-        <!-- RITUAL DE ENTRADA -->
 
-        <div
-            class="instrucciones"
-            id="instrucciones"
-        ></div>
-
-
-        <!-- ILUSTRACIÓN -->
+        <!-- IMAGEN -->
 
         <div class="ilustracion">
 
@@ -271,22 +346,38 @@ body {
         </div>
 
 
-        <!-- REFLEXIÓN -->
+        <!-- ESPACIO DE MENSAJE -->
 
-        <div
-            class="reflexion"
-            id="reflexion"
-        ></div>
+        <div class="zona-mensaje">
 
 
-        <!-- NUEVO VISHWA -->
+            <!-- RITUAL -->
 
-        <button
-            class="boton-nuevo"
-            id="botonNuevo"
-            onclick="nuevaReflexion()"
-        >
-        </button>
+            <div
+                class="instrucciones"
+                id="instrucciones"
+            ></div>
+
+
+            <!-- REFLEXIÓN -->
+
+            <div
+                class="reflexion"
+                id="reflexion"
+            ></div>
+
+
+            <!-- BOTÓN -->
+
+            <button
+                class="boton-nuevo"
+                id="botonNuevo"
+                onclick="nuevaReflexion()"
+            ></button>
+
+
+        </div>
+
 
     </div>
 
@@ -295,22 +386,31 @@ body {
 
 <script>
 
+
 /* =========================================================
    REFLEXIONES TEMPORALES
-   DESPUÉS LAS SACAREMOS A UN ARCHIVO INDEPENDIENTE
 ========================================================= */
 
 const reflexionesES = [
 
 "Volver al momento que está ocurriendo.",
+
 "Observar lo que existe sin necesitar cambiarlo.",
+
 "Dejar por un instante lo que todavía no sucede.",
+
 "Escuchar el silencio entre un pensamiento y otro.",
+
 "Reconocer este instante como suficiente.",
+
 "Mirar alrededor y encontrar algo que antes no estaba viendo.",
+
 "Permitir que el presente ocupe todo el espacio.",
+
 "Respirar sin apresurar el siguiente momento.",
+
 "Sentir dónde estoy antes de decidir hacia dónde ir.",
+
 "Quedarme aquí un poco más."
 
 ];
@@ -319,24 +419,30 @@ const reflexionesES = [
 const reflexionesEN = [
 
 "Return to the moment that is happening.",
+
 "Observe what is here without needing to change it.",
+
 "Let go, for a moment, of what has not happened yet.",
+
 "Listen to the silence between one thought and the next.",
+
 "Allow this moment to be enough.",
+
 "Look around and notice something you had overlooked.",
+
 "Let the present take up all the space.",
+
 "Breathe without rushing toward the next moment.",
+
 "Feel where you are before deciding where to go.",
+
 "Stay here a little longer."
 
 ];
 
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 let idiomaActual = null;
+
 let ultimaReflexion = -1;
 
 
@@ -362,11 +468,6 @@ function seleccionarIdioma(idioma) {
     ).style.display = "block";
 
 
-    /*
-    Primera entrada de la sesión:
-    mostrar ritual.
-    */
-
     iniciarRitual();
 
 }
@@ -374,50 +475,67 @@ function seleccionarIdioma(idioma) {
 
 /* =========================================================
    RITUAL DE ENTRADA
-   SOLO SE EJECUTA AL COMENZAR UNA SESIÓN
 ========================================================= */
 
 function iniciarRitual() {
 
     const instrucciones =
-        document.getElementById("instrucciones");
+        document.getElementById(
+            "instrucciones"
+        );
 
     const reflexion =
-        document.getElementById("reflexion");
+        document.getElementById(
+            "reflexion"
+        );
 
     const boton =
-        document.getElementById("botonNuevo");
+        document.getElementById(
+            "botonNuevo"
+        );
 
-
-    /* Limpiar estado anterior */
 
     instrucciones.innerHTML = "";
 
-    instrucciones.style.opacity = "1";
-
-    reflexion.classList.remove("visible");
-
-    reflexion.style.display = "none";
-
-    boton.style.display = "none";
+    instrucciones.style.opacity =
+        "1";
 
 
-    /*
-    Textos según idioma
-    */
+    reflexion.style.display =
+        "none";
+
+    reflexion.classList.remove(
+        "visible"
+    );
+
+
+    boton.style.display =
+        "none";
+
 
     const palabrasES = [
+
         "Respira.",
+
         "Exhala.",
+
         "Lee.",
+
         "Escribe."
+
     ];
 
+
     const palabrasEN = [
+
         "Breathe.",
+
         "Exhale.",
+
         "Read.",
+
         "Write."
+
     ];
 
 
@@ -427,93 +545,92 @@ function iniciarRitual() {
         : palabrasES;
 
 
-    /*
-    Crear las cuatro palabras
-    */
-
-    palabras.forEach((palabra, index) => {
-
-        const elemento =
-            document.createElement("div");
-
-        elemento.className = "palabra";
-
-        elemento.textContent = palabra;
-
-        instrucciones.appendChild(elemento);
+    palabras.forEach(
+        (palabra, index) => {
 
 
-        let retraso;
+            const elemento =
+                document.createElement(
+                    "div"
+                );
 
 
-        /*
-        Respira:
-        inmediatamente.
+            elemento.className =
+                "palabra";
 
-        Exhala:
-        4 segundos después.
 
-        Lee:
-        1 segundo después.
+            elemento.textContent =
+                palabra;
 
-        Escribe:
-        1 segundo después.
-        */
 
-        if (index === 0) {
+            instrucciones.appendChild(
+                elemento
+            );
 
-            retraso = 0;
 
-        } else if (index === 1) {
+            let retraso;
 
-            retraso = 4000;
 
-        } else if (index === 2) {
+            if (index === 0) {
 
-            retraso = 5000;
+                retraso = 0;
 
-        } else {
+            }
 
-            retraso = 6000;
+            else if (index === 1) {
+
+                retraso = 4000;
+
+            }
+
+            else if (index === 2) {
+
+                retraso = 5000;
+
+            }
+
+            else {
+
+                retraso = 6000;
+
+            }
+
+
+            setTimeout(() => {
+
+                elemento.classList.add(
+                    "visible"
+                );
+
+            }, retraso);
 
         }
-
-
-        setTimeout(() => {
-
-            elemento.classList.add("visible");
-
-        }, retraso);
-
-    });
+    );
 
 
     /*
-    Después de Escribe:
-
-    1 segundo de pausa.
-
-    Luego desaparecen
-    las instrucciones.
+    Termina el ritual.
     */
 
     setTimeout(() => {
 
-        instrucciones.style.opacity = "0";
+        instrucciones.style.opacity =
+            "0";
 
     }, 7000);
 
 
     /*
-    Después de desaparecer
-    mostramos la primera reflexión.
+    Aparece la reflexión.
     */
 
     setTimeout(() => {
 
-        instrucciones.innerHTML = "";
+        instrucciones.innerHTML =
+            "";
 
-        instrucciones.style.opacity = "1";
+        instrucciones.style.opacity =
+            "1";
 
         mostrarReflexion();
 
@@ -537,61 +654,69 @@ function mostrarReflexion() {
     let indice;
 
 
-    /*
-    Evitar repetir inmediatamente
-    la misma reflexión.
-    */
-
     do {
 
         indice =
             Math.floor(
-                Math.random() *
+                Math.random()
+                *
                 reflexiones.length
             );
 
-    } while (
-        indice === ultimaReflexion &&
+    }
+
+    while (
+
+        indice === ultimaReflexion
+        &&
         reflexiones.length > 1
+
     );
 
 
-    ultimaReflexion = indice;
+    ultimaReflexion =
+        indice;
 
 
     const reflexion =
-        document.getElementById("reflexion");
+        document.getElementById(
+            "reflexion"
+        );
+
 
     const boton =
-        document.getElementById("botonNuevo");
+        document.getElementById(
+            "botonNuevo"
+        );
 
 
-    /*
-    Reiniciar animación
-    */
+    reflexion.classList.remove(
+        "visible"
+    );
 
-    reflexion.classList.remove("visible");
 
-    reflexion.style.display = "none";
+    reflexion.style.display =
+        "none";
 
 
     void reflexion.offsetWidth;
 
 
-    /*
-    Insertar reflexión
-    */
-
     reflexion.textContent =
         reflexiones[indice];
 
-    reflexion.style.display = "block";
 
-    reflexion.classList.add("visible");
+    reflexion.style.display =
+        "block";
+
+
+    reflexion.classList.add(
+        "visible"
+    );
 
 
     /*
-    Botón según idioma
+    BOTÓN SEGÚN IDIOMA
     */
 
     boton.textContent =
@@ -600,20 +725,25 @@ function mostrarReflexion() {
         : "Nuevo Vishwa";
 
 
-    boton.style.display = "inline-block";
+    boton.style.display =
+        "inline-block";
 
 }
 
 
 /* =========================================================
    NUEVO VISHWA
-   NO VUELVE A MOSTRAR EL RITUAL
 ========================================================= */
 
 function nuevaReflexion() {
 
     /*
-    Simplemente mostrar otra reflexión.
+    IMPORTANTE:
+
+    Aquí NO llamamos a iniciarRitual().
+
+    Nuevo Vishwa solamente
+    cambia la reflexión.
     */
 
     mostrarReflexion();
@@ -628,12 +758,17 @@ function nuevaReflexion() {
 window.onload = function() {
 
     const idiomaGuardado =
-        localStorage.getItem("vishwaIdioma");
+        localStorage.getItem(
+            "vishwaIdioma"
+        );
 
 
     if (
-        idiomaGuardado === "es" ||
+
+        idiomaGuardado === "es"
+        ||
         idiomaGuardado === "en"
+
     ) {
 
         idiomaActual =
@@ -642,17 +777,20 @@ window.onload = function() {
 
         document.getElementById(
             "selectorIdioma"
-        ).style.display = "none";
+        ).style.display =
+            "none";
 
 
         document.getElementById(
             "experiencia"
-        ).style.display = "block";
+        ).style.display =
+            "block";
 
 
         /*
         Nueva sesión:
-        vuelve a aparecer el ritual.
+        vuelve a aparecer
+        el ritual.
         */
 
         iniciarRitual();
