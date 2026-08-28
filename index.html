@@ -1,226 +1,390 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Vishwa</title>
 
+
 <style>
+
+/* =========================================================
+   BASE
+========================================================= */
 
 * {
     box-sizing: border-box;
 }
 
 body {
+
     margin: 0;
+
     min-height: 100vh;
+
     background: #f7f4ef;
+
     color: #3d3935;
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 30px 20px;
+
 }
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
 
 .contenedor {
+
     width: 100%;
-    max-width: 620px;
+
+    max-width: 600px;
+
     text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* LOGO */
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
+
     font-size: 42px;
+
     letter-spacing: 7px;
-    margin-bottom: 40px;
+
+    margin-bottom: 35px;
+
 }
 
-/* IDIOMAS */
+
+/* =========================================================
+   SELECCIÓN DE IDIOMA
+========================================================= */
 
 .idiomas {
+
     display: flex;
-    gap: 15px;
+
     justify-content: center;
+
+    gap: 15px;
+
 }
 
 .boton-idioma {
+
     border: 1px solid #b8b0a6;
+
     background: transparent;
 
     padding: 12px 25px;
 
     font-family: inherit;
+
     font-size: 16px;
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
 }
 
 .boton-idioma:hover {
+
     background: #3d3935;
+
     color: white;
+
 }
 
-/* EXPERIENCIA */
+
+/* =========================================================
+   EXPERIENCIA
+========================================================= */
 
 .experiencia {
+
     display: none;
+
     width: 100%;
+
 }
 
-/* INSTRUCCIONES */
 
-.instrucciones {
+/* =========================================================
+   IMAGEN DE VISHWA
+========================================================= */
+
+.ilustracion {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+}
+
+.ilustracion img {
+
+    width: 70%;
+
+    max-width: 270px;
+
+    height: auto;
+
+}
+
+
+/* =========================================================
+   ZONA DEL MENSAJE
+========================================================= */
+
+.zona-mensaje {
+
     min-height: 190px;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
+
+}
+
+
+/* =========================================================
+   RITUAL
+========================================================= */
+
+.instrucciones {
+
+    display: flex;
+
+    flex-direction: column;
 
     gap: 8px;
 
     font-size: 22px;
+
     letter-spacing: 2px;
 
-    transition: opacity 1s ease;
+    transition:
+        opacity 1s ease;
+
 }
 
 .palabra {
+
     opacity: 0;
-    transform: translateY(8px);
+
+    transform:
+        translateY(8px);
+
 }
 
 .palabra.visible {
-    animation: aparecer 0.8s ease forwards;
+
+    animation:
+        aparecer 0.8s ease forwards;
+
 }
 
-/* ILUSTRACIÓN */
 
-.ilustracion {
-    width: 100%;
-    margin: 15px 0 25px;
-}
-
-.ilustracion img {
-    max-width: 260px;
-    width: 70%;
-    height: auto;
-}
-
-/* REFLEXIÓN */
+/* =========================================================
+   REFLEXIÓN
+========================================================= */
 
 .reflexion {
+
     display: none;
 
-    margin: 20px auto 35px;
+    width: 100%;
 
     max-width: 550px;
 
     font-size: 27px;
+
     line-height: 1.55;
 
     opacity: 0;
+
 }
 
 .reflexion.visible {
+
     display: block;
-    animation: aparecer 1.5s ease forwards;
+
+    animation:
+        aparecer 1.5s ease forwards;
+
 }
 
-/* BOTÓN */
+
+/* =========================================================
+   BOTÓN NUEVO VISHWA
+========================================================= */
 
 .boton-nuevo {
+
     display: none;
 
+    margin-top: 30px;
+
     border: 1px solid #3d3935;
+
     background: transparent;
 
     padding: 13px 28px;
 
     font-family: inherit;
+
     font-size: 16px;
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
 }
 
 .boton-nuevo:hover {
+
     background: #3d3935;
+
     color: white;
+
 }
 
-/* ANIMACIÓN */
+
+/* =========================================================
+   ANIMACIÓN
+========================================================= */
 
 @keyframes aparecer {
 
     from {
+
         opacity: 0;
-        transform: translateY(8px);
+
+        transform:
+            translateY(8px);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
 }
 
-/* CELULAR */
+
+/* =========================================================
+   CELULAR
+========================================================= */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 25px 18px;
+
+        padding:
+            25px 18px;
+
     }
 
     .logo {
+
         font-size: 34px;
-        letter-spacing: 6px;
-    }
 
-    .instrucciones {
-        font-size: 20px;
-        min-height: 180px;
-    }
+        letter-spacing:
+            6px;
 
-    .reflexion {
-        font-size: 23px;
-        line-height: 1.5;
     }
 
     .ilustracion img {
-        max-width: 220px;
+
+        max-width:
+            220px;
+
+    }
+
+    .instrucciones {
+
+        font-size:
+            20px;
+
+    }
+
+    .reflexion {
+
+        font-size:
+            23px;
+
+        line-height:
+            1.5;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="contenedor">
 
-    <div class="logo">
+
+    <!-- =====================================================
+         LOGO
+         OCULTO HASTA ELEGIR IDIOMA
+    ====================================================== -->
+
+    <div
+        class="logo"
+        id="logo"
+        style="display: none;"
+    >
         Vishwa
     </div>
 
 
-    <!-- SELECCIÓN DE IDIOMA -->
+    <!-- =====================================================
+         SELECCIÓN DE IDIOMA
+    ====================================================== -->
 
     <div
         class="idiomas"
@@ -231,35 +395,31 @@ body {
             class="boton-idioma"
             onclick="seleccionarIdioma('es')"
         >
-            español
+            Español
         </button>
+
 
         <button
             class="boton-idioma"
             onclick="seleccionarIdioma('en')"
         >
-            inglés
+            English
         </button>
 
     </div>
 
 
-    <!-- EXPERIENCIA -->
+    <!-- =====================================================
+         EXPERIENCIA VISHWA
+    ====================================================== -->
 
     <div
         class="experiencia"
         id="experiencia"
     >
 
-        <!-- RITUAL DE ENTRADA -->
 
-        <div
-            class="instrucciones"
-            id="instrucciones"
-        ></div>
-
-
-        <!-- ILUSTRACIÓN -->
+        <!-- IMAGEN -->
 
         <div class="ilustracion">
 
@@ -271,63 +431,473 @@ body {
         </div>
 
 
-        <!-- REFLEXIÓN -->
+        <!-- =================================================
+             ZONA CENTRAL
 
-        <div
-            class="reflexion"
-            id="reflexion"
-        ></div>
+             PRIMERO:
+             Respira / Exhala / Lee / Escribe
+
+             DESPUÉS:
+             Reflexión
+
+             SIEMPRE EN EL MISMO ESPACIO
+        ================================================== -->
+
+        <div class="zona-mensaje">
 
 
-        <!-- NUEVO VISHWA -->
+            <!-- RITUAL -->
 
-        <button
-            class="boton-nuevo"
-            id="botonNuevo"
-            onclick="nuevaReflexion()"
-        >
-        </button>
+            <div
+                class="instrucciones"
+                id="instrucciones"
+            ></div>
+
+
+            <!-- REFLEXIÓN -->
+
+            <div
+                class="reflexion"
+                id="reflexion"
+            ></div>
+
+
+            <!-- BOTÓN -->
+
+            <button
+                class="boton-nuevo"
+                id="botonNuevo"
+                onclick="nuevaReflexion()"
+            ></button>
+
+
+        </div>
+
 
     </div>
+
 
 </div>
 
 
+
 <script>
 
+
 /* =========================================================
-   REFLEXIONES TEMPORALES
-   DESPUÉS LAS SACAREMOS A UN ARCHIVO INDEPENDIENTE
+   100 REFLEXIONES EN ESPAÑOL
 ========================================================= */
 
 const reflexionesES = [
 
 "Volver al momento que está ocurriendo.",
+
 "Observar lo que existe sin necesitar cambiarlo.",
+
 "Dejar por un instante lo que todavía no sucede.",
+
 "Escuchar el silencio entre un pensamiento y otro.",
+
 "Reconocer este instante como suficiente.",
+
 "Mirar alrededor y encontrar algo que antes no estaba viendo.",
+
 "Permitir que el presente ocupe todo el espacio.",
+
 "Respirar sin apresurar el siguiente momento.",
+
 "Sentir dónde estoy antes de decidir hacia dónde ir.",
-"Quedarme aquí un poco más."
+
+"Quedarme aquí un poco más.",
+
+"Nombrar lo que estoy sintiendo sin juzgarlo.",
+
+"Permitir que una emoción exista sin tener que resolverla.",
+
+"Preguntarme qué intenta decirme aquello que siento.",
+
+"Reconocer lo que llevo tiempo evitando sentir.",
+
+"Distinguir entre lo que siento y lo que pienso que debería sentir.",
+
+"Dar espacio a aquello que hoy pesa.",
+
+"Aceptar que sentir también es una forma de comprender.",
+
+"Observar mi emoción antes de convertirla en una decisión.",
+
+"Preguntarme qué necesita de mí lo que estoy sintiendo.",
+
+"Dejar que la emoción pase por mí sin convertirse en mí.",
+
+"Escuchar lo que mi cuerpo ha intentado decirme.",
+
+"Reconocer dónde habita hoy mi tensión.",
+
+"Relajar aquello que llevo demasiado tiempo sosteniendo.",
+
+"Sentir mi respiración antes de escuchar mis pensamientos.",
+
+"Preguntarme qué necesita mi cuerpo en este momento.",
+
+"Dejar de exigirle a mi cuerpo lo que todavía no puede dar.",
+
+"Observar mi cansancio sin convertirlo en culpa.",
+
+"Habitar mi cuerpo antes de volver a mi rutina.",
+
+"Agradecerle a mi cuerpo todo lo que sostiene en silencio.",
+
+"Escuchar antes de exigir.",
+
+"Dejar ir aquello que ya terminó aunque todavía duela.",
+
+"Soltar la necesidad de obtener una respuesta.",
+
+"Dejar de cargar una historia que ya no me pertenece.",
+
+"Aceptar que algunas cosas no necesitan reparación.",
+
+"Liberar el espacio que ocupa aquello que ya no quiero.",
+
+"Dejar de regresar a donde ya no estoy.",
+
+"Permitir que una versión de mí quede atrás.",
+
+"Soltar lo que sostengo solamente por costumbre.",
+
+"Aceptar que despedirme también puede ser una forma de querer.",
+
+"Dejar espacio para aquello que todavía no conozco.",
+
+"Mirar aquello que temo sin hacerlo más grande.",
+
+"Preguntarme qué hay debajo de mi miedo.",
+
+"Distinguir entre peligro y posibilidad.",
+
+"Aceptar que no tener certeza también forma parte del camino.",
+
+"Dar un paso aunque todavía exista miedo.",
+
+"Dejar de imaginar finales que todavía no existen.",
+
+"Reconocer cuánto de mi miedo pertenece al pasado.",
+
+"Preguntarme qué haría si no necesitara sentirme preparado.",
+
+"Permitir que el miedo me acompañe sin dejarlo decidir.",
+
+"Recordar que sentir miedo no significa estar equivocado.",
+
+"Preguntarme qué quiero cuando nadie está mirando.",
+
+"Reconocer aquello que deseo sin justificarlo.",
+
+"Distinguir entre lo que quiero y lo que aprendí a querer.",
+
+"Dar nombre a aquello que todavía no me atrevo a pedir.",
+
+"Preguntarme qué elegiría si no necesitara aprobación.",
+
+"Aceptar que también puedo querer algo diferente.",
+
+"Escuchar el deseo que aparece cuando dejo de compararme.",
+
+"Permitirme imaginar una vida que todavía no existe.",
+
+"Reconocer lo que me hace sentir verdaderamente vivo.",
+
+"Elegir desde el deseo y no solamente desde la obligación.",
+
+"Reconocer dónde termino yo y comienza el otro.",
+
+"Decir que no sin convertirlo en una explicación interminable.",
+
+"Dejar de abandonarme para evitar incomodar a alguien.",
+
+"Preguntarme qué estoy aceptando por miedo a perder.",
+
+"Proteger mi paz sin necesitar justificarla.",
+
+"Distinguir entre ayudar y cargar.",
+
+"Reconocer cuándo estoy dando más de lo que puedo sostener.",
+
+"Permitir que alguien se decepcione sin sentir que he fallado.",
+
+"Elegirme también cuando nadie me está eligiendo.",
+
+"Poner un límite antes de necesitar alejarme.",
+
+"Decir lo que siento antes de convertirlo en distancia.",
+
+"Preguntarme qué estoy esperando de alguien sin decirlo.",
+
+"Reconocer a quienes me hacen sentir en casa.",
+
+"Agradecer una presencia que quizá he dado por sentada.",
+
+"Aceptar que algunas personas llegan para quedarse y otras para enseñarme.",
+
+"Escuchar para comprender y no solamente para responder.",
+
+"Dejar de perseguir una conexión que necesita ser forzada.",
+
+"Preguntarme qué versión de mí aparece cuando estoy con alguien.",
+
+"Permitir que el cariño también tenga silencio.",
+
+"Elegir vínculos donde pueda ser quien soy.",
+
+"Aceptar que cambiar también puede sentirse como perder.",
+
+"Reconocer que ya no soy quien necesitaba ser antes.",
+
+"Dejar de pedirle al pasado que se comporte como presente.",
+
+"Permitir que una etapa termine sin convertirla en fracaso.",
+
+"Preguntarme qué parte de mí necesita cambiar conmigo.",
+
+"Aceptar que crecer también puede incomodar.",
+
+"Dejar que la vida me sorprenda fuera de mis planes.",
+
+"Reconocer cuándo estoy intentando permanecer donde ya cambié.",
+
+"Confiar un poco más en quien estoy llegando a ser.",
+
+"Dar la bienvenida a lo que todavía no sé nombrar.",
+
+"Preguntarme qué merece realmente mi energía.",
+
+"Distinguir entre avanzar y simplemente estar ocupado.",
+
+"Elegir aquello que quiero construir aunque tome tiempo.",
+
+"Preguntarme qué quiero recordar de esta etapa de mi vida.",
+
+"Reconocer qué actividades me acercan a quien quiero ser.",
+
+"Dejar de medir mi camino con la vida de alguien más.",
+
+"Construir algo que tenga sentido incluso cuando nadie lo vea.",
+
+"Preguntarme qué estoy haciendo con el tiempo que tengo.",
+
+"Elegir una dirección aunque todavía no conozca el destino.",
+
+"Vivir de una manera que pueda reconocer como mía."
 
 ];
 
 
+/* =========================================================
+   100 REFLEXIONES EN INGLÉS
+========================================================= */
+
 const reflexionesEN = [
 
 "Return to the moment that is happening.",
+
 "Observe what is here without needing to change it.",
+
 "Let go, for a moment, of what has not happened yet.",
+
 "Listen to the silence between one thought and the next.",
+
 "Allow this moment to be enough.",
+
 "Look around and notice something you had overlooked.",
+
 "Let the present take up all the space.",
+
 "Breathe without rushing toward the next moment.",
+
 "Feel where you are before deciding where to go.",
-"Stay here a little longer."
+
+"Stay here a little longer.",
+
+"Name what you are feeling without judging it.",
+
+"Allow an emotion to exist without needing to solve it.",
+
+"Ask what your feelings are trying to tell you.",
+
+"Acknowledge what you have been avoiding feeling.",
+
+"Distinguish between what you feel and what you think you should feel.",
+
+"Make room for what feels heavy today.",
+
+"Accept that feeling is also a way of understanding.",
+
+"Observe your emotion before turning it into a decision.",
+
+"Ask what the feeling needs from you.",
+
+"Let the emotion move through you without becoming you.",
+
+"Listen to what your body has been trying to tell you.",
+
+"Notice where tension lives today.",
+
+"Release what you have been holding for too long.",
+
+"Feel your breath before listening to your thoughts.",
+
+"Ask what your body needs in this moment.",
+
+"Stop asking your body for what it cannot yet give.",
+
+"Notice your tiredness without turning it into guilt.",
+
+"Be in your body before returning to your routine.",
+
+"Thank your body for all it carries in silence.",
+
+"Listen before demanding.",
+
+"Let go of what has ended, even if it still hurts.",
+
+"Release the need to have an answer.",
+
+"Stop carrying a story that no longer belongs to you.",
+
+"Accept that some things do not need to be repaired.",
+
+"Release the space occupied by what you no longer want.",
+
+"Stop returning to places where you no longer are.",
+
+"Allow a version of yourself to remain in the past.",
+
+"Let go of what you hold only out of habit.",
+
+"Accept that saying goodbye can also be a way of loving.",
+
+"Make room for what you do not know yet.",
+
+"Look at what you fear without making it bigger.",
+
+"Ask what lies beneath your fear.",
+
+"Distinguish between danger and possibility.",
+
+"Accept that uncertainty is also part of the path.",
+
+"Take a step while fear is still there.",
+
+"Stop imagining endings that have not happened.",
+
+"Notice how much of your fear belongs to the past.",
+
+"Ask what you would do if you did not need to feel ready.",
+
+"Let fear accompany you without letting it decide.",
+
+"Remember that feeling afraid does not mean you are wrong.",
+
+"Ask what you want when no one is watching.",
+
+"Acknowledge what you desire without explaining it.",
+
+"Distinguish between what you want and what you learned to want.",
+
+"Give a name to what you are not yet ready to ask for.",
+
+"Ask what you would choose without needing approval.",
+
+"Allow yourself to want something different.",
+
+"Listen to the desire that appears when comparison fades.",
+
+"Allow yourself to imagine a life that does not exist yet.",
+
+"Recognize what makes you feel truly alive.",
+
+"Choose from desire, not only from obligation.",
+
+"Recognize where you end and another person begins.",
+
+"Say no without turning it into an endless explanation.",
+
+"Stop abandoning yourself to avoid making someone uncomfortable.",
+
+"Ask what you are accepting because you are afraid to lose it.",
+
+"Protect your peace without needing to justify it.",
+
+"Distinguish between helping and carrying.",
+
+"Notice when you are giving more than you can sustain.",
+
+"Allow someone to be disappointed without feeling that you have failed.",
+
+"Choose yourself even when no one else is choosing you.",
+
+"Set a boundary before you need to walk away.",
+
+"Say what you feel before turning it into distance.",
+
+"Ask what you are expecting from someone without saying it.",
+
+"Recognize the people who make you feel at home.",
+
+"Appreciate a presence you may have taken for granted.",
+
+"Accept that some people come to stay and others come to teach.",
+
+"Listen to understand, not only to respond.",
+
+"Stop chasing a connection that needs to be forced.",
+
+"Ask which version of yourself appears around someone.",
+
+"Allow affection to have silence too.",
+
+"Choose relationships where you can be yourself.",
+
+"Accept that change can also feel like loss.",
+
+"Recognize that you are no longer who you once needed to be.",
+
+"Stop asking the past to behave like the present.",
+
+"Allow a chapter to end without calling it failure.",
+
+"Ask which part of you needs to change with you.",
+
+"Accept that growth can feel uncomfortable.",
+
+"Let life surprise you beyond your plans.",
+
+"Notice when you are trying to remain somewhere you have already outgrown.",
+
+"Trust a little more in who you are becoming.",
+
+"Welcome what you do not know how to name yet.",
+
+"Ask what truly deserves your energy.",
+
+"Distinguish between moving forward and simply staying busy.",
+
+"Choose what you want to build, even if it takes time.",
+
+"Ask what you want to remember about this season of your life.",
+
+"Recognize what brings you closer to who you want to become.",
+
+"Stop measuring your path against someone else’s life.",
+
+"Build something that matters even when no one sees it.",
+
+"Ask what you are doing with the time you have.",
+
+"Choose a direction even when you do not know the destination.",
+
+"Live in a way that feels like your own."
 
 ];
 
@@ -337,6 +907,7 @@ const reflexionesEN = [
 ========================================================= */
 
 let idiomaActual = null;
+
 let ultimaReflexion = -1;
 
 
@@ -353,19 +924,21 @@ function seleccionarIdioma(idioma) {
         idioma
     );
 
+
     document.getElementById(
         "selectorIdioma"
     ).style.display = "none";
+
+
+    document.getElementById(
+        "logo"
+    ).style.display = "block";
+
 
     document.getElementById(
         "experiencia"
     ).style.display = "block";
 
-
-    /*
-    Primera entrada de la sesión:
-    mostrar ritual.
-    */
 
     iniciarRitual();
 
@@ -373,51 +946,71 @@ function seleccionarIdioma(idioma) {
 
 
 /* =========================================================
-   RITUAL DE ENTRADA
-   SOLO SE EJECUTA AL COMENZAR UNA SESIÓN
+   RITUAL
 ========================================================= */
 
 function iniciarRitual() {
 
     const instrucciones =
-        document.getElementById("instrucciones");
+        document.getElementById(
+            "instrucciones"
+        );
 
     const reflexion =
-        document.getElementById("reflexion");
+        document.getElementById(
+            "reflexion"
+        );
 
     const boton =
-        document.getElementById("botonNuevo");
+        document.getElementById(
+            "botonNuevo"
+        );
 
 
-    /* Limpiar estado anterior */
+    /* LIMPIAR */
 
     instrucciones.innerHTML = "";
 
-    instrucciones.style.opacity = "1";
+    instrucciones.style.display =
+        "flex";
 
-    reflexion.classList.remove("visible");
-
-    reflexion.style.display = "none";
-
-    boton.style.display = "none";
+    instrucciones.style.opacity =
+        "1";
 
 
-    /*
-    Textos según idioma
-    */
+    reflexion.style.display =
+        "none";
+
+    reflexion.classList.remove(
+        "visible"
+    );
+
+
+    boton.style.display =
+        "none";
+
+
+    /* =====================================================
+       PALABRAS
+    ===================================================== */
 
     const palabrasES = [
+
         "Respira.",
         "Exhala.",
         "Lee.",
         "Escribe."
+
     ];
 
+
     const palabrasEN = [
+
         "Breathe.",
         "Exhale.",
         "Read.",
         "Write."
+
     ];
 
 
@@ -428,96 +1021,108 @@ function iniciarRitual() {
 
 
     /*
-    Crear las cuatro palabras
+       TIEMPOS:
+
+       Respira  → 0 segundos
+       Exhala   → 4 segundos
+       Lee      → 8 segundos
+       Escribe  → 9 segundos
+
+       Por lo tanto:
+
+       RESPIRA = 4 segundos
+
+       EXHALA = 4 segundos
+
+       LEE = 1 segundo
+
+       ESCRIBE
     */
 
-    palabras.forEach((palabra, index) => {
+    const tiempos = [
 
-        const elemento =
-            document.createElement("div");
+        0,
+        4000,
+        8000,
+        9000
 
-        elemento.className = "palabra";
-
-        elemento.textContent = palabra;
-
-        instrucciones.appendChild(elemento);
+    ];
 
 
-        let retraso;
+    palabras.forEach(
+        (palabra, index) => {
+
+            const elemento =
+                document.createElement(
+                    "div"
+                );
 
 
-        /*
-        Respira:
-        inmediatamente.
+            elemento.className =
+                "palabra";
 
-        Exhala:
-        4 segundos después.
 
-        Lee:
-        1 segundo después.
+            elemento.textContent =
+                palabra;
 
-        Escribe:
-        1 segundo después.
-        */
 
-        if (index === 0) {
+            instrucciones.appendChild(
+                elemento
+            );
 
-            retraso = 0;
 
-        } else if (index === 1) {
+            setTimeout(
+                () => {
 
-            retraso = 4000;
+                    elemento.classList.add(
+                        "visible"
+                    );
 
-        } else if (index === 2) {
-
-            retraso = 5000;
-
-        } else {
-
-            retraso = 6000;
+                },
+                tiempos[index]
+            );
 
         }
-
-
-        setTimeout(() => {
-
-            elemento.classList.add("visible");
-
-        }, retraso);
-
-    });
+    );
 
 
     /*
-    Después de Escribe:
+    DESPUÉS DE "ESCRIBE"
 
-    1 segundo de pausa.
-
-    Luego desaparecen
-    las instrucciones.
+    Dejamos un segundo de pausa.
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        instrucciones.style.opacity = "0";
+            instrucciones.style.opacity =
+                "0";
 
-    }, 7000);
+        },
+        10000
+    );
 
 
     /*
-    Después de desaparecer
-    mostramos la primera reflexión.
+    EL RITUAL DESAPARECE.
+
+    LA REFLEXIÓN APARECE
+    EN EL MISMO ESPACIO.
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        instrucciones.innerHTML = "";
+            instrucciones.innerHTML = "";
 
-        instrucciones.style.opacity = "1";
+            instrucciones.style.display =
+                "none";
 
-        mostrarReflexion();
+            mostrarReflexion();
 
-    }, 8000);
+        },
+        11000
+    );
 
 }
 
@@ -534,11 +1139,21 @@ function mostrarReflexion() {
         : reflexionesES;
 
 
+    if (
+        !reflexiones ||
+        reflexiones.length === 0
+    ) {
+
+        return;
+
+    }
+
+
     let indice;
 
 
     /*
-    Evitar repetir inmediatamente
+    Evitar mostrar inmediatamente
     la misma reflexión.
     */
 
@@ -546,52 +1161,70 @@ function mostrarReflexion() {
 
         indice =
             Math.floor(
-                Math.random() *
+                Math.random()
+                *
                 reflexiones.length
             );
 
     } while (
-        indice === ultimaReflexion &&
+
+        indice === ultimaReflexion
+        &&
         reflexiones.length > 1
+
     );
 
 
-    ultimaReflexion = indice;
+    ultimaReflexion =
+        indice;
 
 
     const reflexion =
-        document.getElementById("reflexion");
+        document.getElementById(
+            "reflexion"
+        );
+
 
     const boton =
-        document.getElementById("botonNuevo");
+        document.getElementById(
+            "botonNuevo"
+        );
 
 
     /*
     Reiniciar animación
     */
 
-    reflexion.classList.remove("visible");
+    reflexion.classList.remove(
+        "visible"
+    );
 
-    reflexion.style.display = "none";
+    reflexion.style.display =
+        "none";
 
 
     void reflexion.offsetWidth;
 
 
     /*
-    Insertar reflexión
+    Mostrar reflexión
     */
 
     reflexion.textContent =
         reflexiones[indice];
 
-    reflexion.style.display = "block";
 
-    reflexion.classList.add("visible");
+    reflexion.style.display =
+        "block";
+
+
+    reflexion.classList.add(
+        "visible"
+    );
 
 
     /*
-    Botón según idioma
+    BOTÓN SEGÚN IDIOMA
     */
 
     boton.textContent =
@@ -600,20 +1233,30 @@ function mostrarReflexion() {
         : "Nuevo Vishwa";
 
 
-    boton.style.display = "inline-block";
+    boton.style.display =
+        "inline-block";
 
 }
 
 
 /* =========================================================
    NUEVO VISHWA
-   NO VUELVE A MOSTRAR EL RITUAL
 ========================================================= */
 
 function nuevaReflexion() {
 
     /*
-    Simplemente mostrar otra reflexión.
+    IMPORTANTE:
+
+    NO se ejecuta iniciarRitual().
+
+    Por lo tanto:
+
+    Nuevo Vishwa
+    ↓
+    nueva reflexión
+
+    y nada más.
     */
 
     mostrarReflexion();
@@ -622,18 +1265,33 @@ function nuevaReflexion() {
 
 
 /* =========================================================
-   CARGAR IDIOMA GUARDADO
+   AL ABRIR LA PÁGINA
 ========================================================= */
 
 window.onload = function() {
 
     const idiomaGuardado =
-        localStorage.getItem("vishwaIdioma");
+        localStorage.getItem(
+            "vishwaIdioma"
+        );
 
+
+    /*
+    Si ya había elegido idioma:
+
+    NO volvemos a preguntar.
+
+    Vishwa aparece directamente
+    y comienza una nueva sesión
+    con el ritual.
+    */
 
     if (
-        idiomaGuardado === "es" ||
+
+        idiomaGuardado === "es"
+        ||
         idiomaGuardado === "en"
+
     ) {
 
         idiomaActual =
@@ -642,18 +1300,21 @@ window.onload = function() {
 
         document.getElementById(
             "selectorIdioma"
-        ).style.display = "none";
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "logo"
+        ).style.display =
+            "block";
 
 
         document.getElementById(
             "experiencia"
-        ).style.display = "block";
+        ).style.display =
+            "block";
 
-
-        /*
-        Nueva sesión:
-        vuelve a aparecer el ritual.
-        */
 
         iniciarRitual();
 
@@ -664,4 +1325,5 @@ window.onload = function() {
 </script>
 
 </body>
+
 </html>
